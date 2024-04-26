@@ -1,0 +1,9 @@
+.contactlineDiv{
+    position: absolute;
+    top: 15px;
+    left: -3%;
+    width: 95%;
+    height: 200%;
+    transition: all 1s;
+    animation: moveLine 15s infinite;
+}

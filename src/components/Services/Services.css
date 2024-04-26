@@ -1,0 +1,28 @@
+.poptop{
+    padding-top: 50px;
+}
+.serBack{
+    background: #000;
+    color: #fff;
+    padding-top: 80px;
+    position: relative;
+}
+.popSerlineDiv{
+    position: absolute;
+    top: 15px;
+    left: -3%;
+    width: 95%;
+    height: 480%;
+    transition: all 1s;
+    animation: moveLine 15s infinite;
+}
+@media only screen and (max-width: 1280px){
+    .popSerlineDiv{
+        height: 530%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .popSerlineDiv{
+        height: 750%;
+    }
+}

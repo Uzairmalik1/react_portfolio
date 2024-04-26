@@ -1,0 +1,36 @@
+.limitedlineDiv{
+    position: absolute;
+    top: 15px;
+    left: -3%;
+    width: 95%;
+    height: 270%;
+    transition: all 1s;
+    animation: moveLine 15s infinite;
+}
+.aboutTop{
+    padding-top: 80px;
+    background: #131313;
+    height: 50vh;
+    text-align: center;
+}
+.aboutTop>h1{
+    font-size: 5rem;
+    font-weight: 500;
+    color: #fff;
+}
+.aboutSkills{
+    background: none;
+}
+.aboutCvBtn{
+    margin: 0px;
+}
+@media only screen and (max-width: 1480px){
+    .limitedlineDiv{
+        height: 320%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .limitedlineDiv{
+        height: 420%;
+    }
+}

@@ -1,0 +1,186 @@
+.NavBar{
+    width: 100vw;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px 150px;
+    background: #1313139d;
+    /* background: transparent; */
+    position: fixed;
+    z-index: 11;
+    box-shadow: 1px 1px 10px #282626;
+    overflow-y: hidden;
+}
+
+.logo_box{
+    width: 11.6rem;
+    position: relative;
+    cursor: pointer;
+}
+.logo{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    color: transparent;
+    -webkit-text-stroke: 0.1vw #770753;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, hsl(353, 92%, 49%) 0%, 
+                                       rgb(89, 253, 29) 50%, 
+                                       rgb(216, 236, 37) 100%);
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    transition: .6s;
+    animation: moveText 4s linear infinite;
+    animation-delay: 1s;
+}
+.logo::before{
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -3px;
+    width: 0;
+    height: 70%;
+    border-right: 2px solid #8e8989;
+    animation: moveCursorText 4s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes moveText{
+    0%,10%,100%{
+    background-position: -13rem 0;
+    }
+    65%,85%{
+    background-position: 0rem 0;
+    }
+    }
+@keyframes moveCursorText{
+    0%,10%,100%{
+    width: 0;
+    }
+    65%,78%,85%{
+    width: 100%;
+    opacity: 1;
+    }
+    75%,85%{
+    opacity: 0;
+    }
+    }
+
+.ulBox{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.ulBox>li{
+    padding: 10px;
+    margin-left: 40px;
+}
+.ulBox>li .Navlink{
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #d8d3d3;
+    transition: all .5s;
+}
+.ulBox>li .Navlink:hover{
+    color: #c9f31d;
+}
+.resBtn{
+    display: none;
+}
+.btn_form{
+    background-color: #c9f31d;
+    width: 50px;
+    height: 50px;
+    color: #131313;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+.btn_form:hover{
+    box-shadow: -1px 1px 8px #8e8989;
+}
+
+/* =======---- Responsive NavBar ---============ */
+
+.resNavCon{
+    background: #0000006a;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    z-index: 121;
+    display: flex;
+    justify-content: flex-end;
+    transition: .4s;
+}
+.RssNav{
+    position: fixed;
+    width: 380px;
+    height: 100%;
+    background: #131313;
+    /* z-index: 22; */
+    text-align: center;
+}
+.btn_cross{
+    position: relative;
+    margin: 26px;
+    left: 140px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    transition: .5s;
+}
+.btn_cross:hover{
+    transform: rotate(360deg);
+}
+.resUlBox{
+    list-style: none;
+    padding-bottom: 20px;
+}
+.resUlBox>li{
+    margin: 10px 0px;
+}
+.Navlink{
+    text-decoration: none;
+    color: #ebe1e1;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.Navlink:hover{
+    color: #c9f31d;
+}
+.icon-section{
+    margin: 20px;
+}
+.icons{
+    background: #0e0808;
+    color: #fff;
+    margin: 5px;
+    padding: 15px 18px;
+    border-radius: 50%;
+    transition: .8s;
+    cursor: pointer;
+}
+.icons:hover{
+    background: #c9f31d;
+    color: #000;
+}
+
+@media only screen and (max-width: 1130px) {
+    .resBtn {
+      display: block;
+    }
+    .ulBox{
+        display: none;
+    }
+    .NavBar{
+        padding: 10px 80px;
+    }
+  }
