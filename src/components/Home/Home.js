@@ -30,7 +30,7 @@ const rightVariant = {
 
 const scaleVariant = {
   visible: { opacity: 1, scale: 1, transition: { duration: .8, delay: .1, ease: "linear" } },
-  hidden: { opacity: 0, scale: 0  }
+  hidden: { opacity: 0, scale: 0 }
 };
 
 
@@ -59,11 +59,11 @@ const Home = () => {
           alert(`Message is not send there is any error!`)
         },
       );
-      setName("");
-      setEmail("");
-      setPhone("");
-      setSubject("");
-      setText("");
+    setName("");
+    setEmail("");
+    setPhone("");
+    setSubject("");
+    setText("");
   };
 
 
@@ -162,7 +162,7 @@ const Home = () => {
         </div>
         <div className="exp">
 
-          
+
 
           <Section className="expdetail" variant={boxVariant}>
             <p>My Resume</p>
@@ -171,35 +171,88 @@ const Home = () => {
               <div className="expSide">
                 <div className='uparrow'><LuArrowUpRight /></div>
                 <div className='expSideDe'>
-                  <p>2024 - present</p>
-                  <h3>City University Peshawar</h3>
-                  <p>City Uni</p>
+                  <p>May 2024 - present</p>
+                  <h3>ZetaSoft IT Solutions</h3>
+                  <p>MERN Stack and Next.js developer.</p>
                 </div>
               </div>
-              <div className="expSide">
-                <div className='uparrow'><LuArrowUpRight /></div>
-                <div className='expSideDe'>
-                  <p>2023 - 2024</p>
-                  <h3>React js Developer</h3>
-                  <p>Company name</p>
+
+              <section
+                style={{
+                  padding: "2rem",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "1.125rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  Key Projects
+                </p>
+                <h3
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    color: "#ffffff",
+                  }}
+                >
+                  My <span style={{ color: "#007bff" }}>Projects</span>
+                </h3>
+                <div style={{ marginTop: "1.5rem" }}>
+                  <div style={{ marginBottom: "1rem" }}>
+                    <h3
+                      style={{
+                        fontSize: "1.125rem",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center"
+                      }}
+                    >
+                      Training Management System <a href="https://github.com/abdulmalikshakir2001/tms" target='blank' className='uparrow'><LuArrowUpRight /></a>
+                    </h3>
+                    <p style={{ fontSize: "0.875rem"}}>
+                      Developed for ECI Company to manage 15-30 day online training sessions,
+                      including scheduling and reporting.
+                    </p>
+                  </div>
+                  <div style={{ marginBottom: "1rem" }}>
+                    <h3
+                      style={{
+                        fontSize: "1.125rem",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center"
+                      }}
+                    >
+                      Editor.ai <a href="https://github.com/abdulmalikshakir2001/ai_video" target='blank' className='uparrow'><LuArrowUpRight /></a>
+                    </h3>
+                    <p style={{ fontSize: "0.875rem" }}>
+                      Built a video editor to convert long videos into reels, with features
+                      like subtitles, trimming, and aspect ratio edits.
+                    </p>
+                  </div>
+                  <div style={{ marginBottom: "1rem" }}>
+                    <h3
+                      style={{
+                        fontSize: "1.125rem",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center"
+                      }}
+                    >
+                      E-Commerce Website <a href="https://github.com/Uzairmalik1/E-commerce_using_nextjs" target='blank' className='uparrow'><LuArrowUpRight /></a>
+                    </h3>
+                    <p style={{ fontSize: "0.875rem"}}>
+                      Created a secure shopping platform with Stripe integration and
+                      user-friendly features.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="expSide">
-                <div className='uparrow'><LuArrowUpRight /></div>
-                <div className='expSideDe'>
-                  <p>2023 - 2024</p>
-                  <h3>MERN Stack Developer</h3>
-                  <p>Company name</p>
-                </div>
-              </div>
-              <div className="expSide">
-                <div className='uparrow'><LuArrowUpRight /></div>
-                <div className='expSideDe'>
-                  <p>2023 - 2024</p>
-                  <h3>MERN Stack Developer</h3>
-                  <p>Company name</p>
-                </div>
-              </div>
+              </section>
+
+
+
             </div>
           </Section>
           <Section className="swLogo" variant={scaleVariant}>
@@ -320,7 +373,7 @@ const Home = () => {
           <p>Latest Works</p>
           <h3>Explore My Popular <span>Projects</span></h3>
         </Section>
-  
+
         <div className="LworkType">
           <div className="LworkBox">
             <Section className="LworkBoxImg" variant={leftVariant}>
@@ -377,7 +430,7 @@ const Home = () => {
           <p>News & Blog</p>
           <h3>Latest <span>News & Blog</span></h3>
         </Section>
-        
+
         <div className="newstype">
           <Section variant={leftVariant} className="newsBox">
             <img src="./image/Lwork.jpg" alt="" />
@@ -410,40 +463,40 @@ const Home = () => {
           <h4><span><FaCheck /></span> MERN Stack Developer</h4>
           <h4><span><FaCheck /></span> Data Scientest</h4>
         </Section>
-        <Section  variant={boxVariant} className="contactForm">
-            <form ref={form} onSubmit={sendEmail}>
+        <Section variant={boxVariant} className="contactForm">
+          <form ref={form} onSubmit={sendEmail}>
 
-              <div className="contactinputss">
-                <div className="formInput">
-                  <p>Full Name</p>
-                  <input type="text" name='user_name' required value={name} onChange={(e) => setName(e.target.value)} placeholder='Your Name' />
-                  <div className="formIcons"><BsPerson /></div>
-                </div>
-
-                <div className="formInput">
-                  <p>Email Address</p>
-                  <input type="email" name="user_email" required id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='support@gmail.com' />
-                  <div className="formIcons"><MdOutlineMail /></div>
-                </div>
-
-                <div className="formInput">
-                  <p>Phone Number</p>
-                  <input type="number" name='user_number' required value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='+92 342 990 85 23' />
-                  <div className="formIcons"><AiOutlinePhone /></div>
-                </div>
-
-                <div className="formInput">
-                  <p>Subject</p>
-                  <input type="text" name='subject' required value={subject} onChange={(e) => setSubject(e.target.value)} placeholder='Subject' />
-                  <div className="formIcons"><PiTextTBold /></div>
-                </div>
+            <div className="contactinputss">
+              <div className="formInput">
+                <p>Full Name</p>
+                <input type="text" name='user_name' required value={name} onChange={(e) => setName(e.target.value)} placeholder='Your Name' />
+                <div className="formIcons"><BsPerson /></div>
               </div>
-              <p>Message</p>
-              <textarea name="message" required value={text} onChange={(e) => setText(e.target.value)} id="" cols="30" rows="7" placeholder='Write Message'></textarea>
 
-              <input type="submit" className='msgSubmitBtn' value="Send Us Message &gt;" />
-            </form>
-          </Section>
+              <div className="formInput">
+                <p>Email Address</p>
+                <input type="email" name="user_email" required id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='support@gmail.com' />
+                <div className="formIcons"><MdOutlineMail /></div>
+              </div>
+
+              <div className="formInput">
+                <p>Phone Number</p>
+                <input type="number" name='user_number' required value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='+92 342 990 85 23' />
+                <div className="formIcons"><AiOutlinePhone /></div>
+              </div>
+
+              <div className="formInput">
+                <p>Subject</p>
+                <input type="text" name='subject' required value={subject} onChange={(e) => setSubject(e.target.value)} placeholder='Subject' />
+                <div className="formIcons"><PiTextTBold /></div>
+              </div>
+            </div>
+            <p>Message</p>
+            <textarea name="message" required value={text} onChange={(e) => setText(e.target.value)} id="" cols="30" rows="7" placeholder='Write Message'></textarea>
+
+            <input type="submit" className='msgSubmitBtn' value="Send Us Message &gt;" />
+          </form>
+        </Section>
       </div>
     </>
   )
