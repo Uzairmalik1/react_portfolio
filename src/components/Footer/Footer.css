@@ -140,3 +140,7 @@
         padding: 20px 5px;
     }
 }
+
+.icon-section{
+    display: flex;
+}

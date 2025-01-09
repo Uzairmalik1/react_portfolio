@@ -68,10 +68,10 @@ const Footer = () => {
                 <p>Copyright &#169;2024, SmartWeb All Rights Reserved</p>
             </Section>
             <Section variant={rightVariant} className="icon-section">
-              <a href='https://www.linkedin.com/feed/' target='blank' className='icons'><FaLinkedin /></a>
+              <a href='https://www.linkedin.com/in/uzair-k-b4a813262/' target='blank' className='icons'><FaLinkedin /></a>
               <a href='https://twitter.com/home' target='blank' className='icons'><FaXTwitter /></a>
-              <a href='https://www.facebook.com/' target='blank' className='icons'><FaFacebookF /></a>
-              <a href='https://www.instagram.com/uzairuzair40/' target='blank' className='icons'><CiInstagram /></a>
+              <a href='https://www.facebook.com/profile.php?id=100035006707888' target='blank' className='icons'><FaFacebookF /></a>
+              <a href='https://www.instagram.com/uzairullah397/' target='blank' className='icons'><CiInstagram /></a>
               <a href='https://github.com/Uzairmalik1' target='blank' className='icons'><FaGithub /></a>
             </Section>
         </div>
