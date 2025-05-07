@@ -40,6 +40,20 @@ const Home = () => {
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [text, setText] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const portfolioImages = [
+    "/image/portfolio1.png",
+    "/image/portfolio2.png",
+    "/image/portfolio3.png",
+    "/image/portfolio4.png"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === portfolioImages.length - 1 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const form = useRef();
 
@@ -161,12 +175,98 @@ const Home = () => {
           <span style={{ left: '90%' }} className='line'></span>
         </div>
         <div className="exp">
-
-
-
           <Section className="expdetail" variant={boxVariant}>
             <p>My Resume</p>
             <h3>Real <span>Problem Solutions </span> Experience</h3>
+            
+            {/* Portfolio Slider for Resume Section */}
+            <div className="portfolio-slider-resume">
+              {portfolioImages.map((img, index) => (
+                <div 
+                  key={index} 
+                  className={`slide ${index === currentSlide ? 'active' : ''}`}
+                  style={{ 
+                    backgroundImage: `url(${img})`,
+                    opacity: index === currentSlide ? 1 : 0
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Editur.ai Experience */}
+            <div className="expComp editur-experience">
+              <div className="expSide">
+                <div className='uparrow'><LuArrowUpRight /></div>
+                <div className='expSideDe'>
+                  <p>June 2024 - present</p>
+                  <h3>Editur.ai - AI-Powered Video Editing Platform</h3>
+                  <p>Full Stack Developer</p>
+                </div>
+              </div>
+
+              <div className="editur-content">
+                <div className="editur-section">
+                  <h4>Project Overview</h4>
+                  <p>
+                    Editur.ai is a cutting-edge SaaS platform designed to transform long-form videos into engaging short clips with minimal effort. 
+                    By leveraging advanced AI algorithms, this tool automates complex editing tasks, enabling creators, marketers, 
+                    and businesses to produce professional-quality content quickly. It is tailored for content creators, marketers, 
+                    and social media managers who seek efficiency and enhanced productivity.
+                  </p>
+                </div>
+
+                <div className="editur-section">
+                  <h4>Project Goal</h4>
+                  <p>
+                    The goal of Editur.ai was to develop an intuitive, web-based platform that simplifies video editing processes. 
+                    It aimed to save time and effort for users by:
+                  </p>
+                  <ul>
+                    <li>Automating tasks such as framing, cutting, and inserting B-rolls.</li>
+                    <li>Allowing users to create high-quality, shareable short videos without requiring professional editing skills.</li>
+                    <li>Enhancing productivity and engagement by delivering polished videos suited for platforms like TikTok, Instagram, and YouTube.</li>
+                  </ul>
+                  <p>
+                    The primary focus was on improving user experience and reducing manual intervention while maintaining high-quality output.
+                  </p>
+                </div>
+
+                <div className="editur-section">
+                  <h4>Features</h4>
+                  <ul className="features-grid">
+                    <li><strong>AI-Powered Video Editing:</strong> Utilizes machine learning to auto-detect and extract engaging video segments.</li>
+                    <li><strong>User-Friendly Interface:</strong> Offers a clean and intuitive interface with drag-and-drop functionality and easy navigation.</li>
+                    <li><strong>Customizable Templates:</strong> Includes various templates for branding, captions, and special effects.</li>
+                    <li><strong>Real-Time Previews:</strong> Allows users to preview edits instantly for quick decision-making.</li>
+                    <li><strong>Cloud Storage Integration:</strong> Seamless integration with popular storage platforms for easy uploads and downloads.</li>
+                    <li><strong>Multi-Format Export:</strong> Supports batch exporting in multiple formats tailored to different social platforms.</li>
+                    <li><strong>Batch Processing:</strong> Enables efficient handling of multiple videos simultaneously.</li>
+                    <li><strong>Analytics Dashboard:</strong> Tracks video performance metrics and provides insights for content optimization.</li>
+                  </ul>
+                </div>
+
+                <div className="editur-section">
+                  <h4>Project Achievements</h4>
+                  <ul>
+                    <li>Successfully launched a SaaS platform that reduces video editing time significantly.</li>
+                    <li>Received positive feedback for ease of use and effectiveness in creating engaging short clips.</li>
+                    <li>Improved user engagement with customizable templates and intuitive previews.</li>
+                    <li>Helped clients manage and process high volumes of content effortlessly, increasing productivity.</li>
+                    <li>Provided valuable performance insights through its analytics dashboard to refine content strategies.</li>
+                  </ul>
+                </div>
+
+                <div className="editur-section">
+                  <h4>Client Review</h4>
+                  <blockquote>
+                    "Editur.ai has revolutionized our content creation process. It dramatically reduces editing time while maintaining exceptional quality. 
+                    The intuitive interface and AI-powered features allow our team to focus on creativity rather than technical complexities. 
+                    It's a game-changer for marketers and content creators alike."
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+
             <div className="expComp">
               <div className="expSide">
                 <div className='uparrow'><LuArrowUpRight /></div>
@@ -250,13 +350,7 @@ const Home = () => {
                   </div>
                 </div>
               </section>
-
-
-
             </div>
-          </Section>
-          <Section className="swLogo" variant={scaleVariant}>
-            <img src="./image/smartweb_logo.png" alt="logo" />
           </Section>
         </div>
         {/* ================ Services Section ============= */}
@@ -275,8 +369,8 @@ const Home = () => {
             <Section className="serT" variant={rightVariant}>
               <h1>02.</h1>
               <div className="serDet">
-                <h3>Front End Development</h3>
-                <p>I will Develop Front End using React js .</p>
+                <h3>AI Integration for Web Apps</h3>
+                <p>Empowering web apps intelligently.</p>
               </div>
               <div className="uparrow"><LuArrowUpRight /></div>
             </Section>
@@ -307,8 +401,8 @@ const Home = () => {
             <Section className="serT" variant={boxVariant}>
               <h1>06.</h1>
               <div className="serDet">
-                <h3>Photoshop Editing</h3>
-                <p>creating banners & web design .</p>
+                <h3>SaaS Development</h3>
+                <p>We build scalable SaaS products that help businesses grow.</p>
               </div>
               <div className="uparrow"><LuArrowUpRight /></div>
             </Section>
@@ -320,7 +414,7 @@ const Home = () => {
       <div className="skills">
         <Section className="skilldetials" variant={boxVariant}>
           <span>My Skills</span>
-          <h3>Let’s Explore Popular <span> Skills & Experience</span></h3>
+          <h3>Let's Explore Popular <span> Skills & Experience</span></h3>
           <p>Dive into in-demand skills and experience that drive success. Discover what sets top performers apart in today's competitive landscape.</p>
           <Link className='skillBtn' to={'/about'}>Learn More &gt;</Link>
         </Section>
@@ -348,6 +442,11 @@ const Home = () => {
           <Section className="skillTy" variant={boxVariant}>
             <img src="./image/react.png" alt="" />
             <p>React js</p>
+            <h3>95%</h3>
+          </Section>
+          <Section className="skillTy" variant={boxVariant}>
+            <img src="./image/next.png" alt="" />
+            <p>Next js</p>
             <h3>95%</h3>
           </Section>
           <Section className="skillTy" variant={boxVariant}>
